@@ -9,9 +9,9 @@ fi
 
 
 echo "Setup servidor web com Apache"
-echo ¨==========================="
+echo "==========================="
 echo "Iniciando..."
-echo ¨==========================="
+echo "==========================="
 
 echo "Atualizando pacotes"
 apt-get update && apt-get upgrade -y
@@ -38,6 +38,8 @@ cp -r /tmp/linux-site-dio-main/* /var/www/html/
 echo "Limpando arquivos temporarios"
 rm -rf /tmp/main.zip /tmp/linux-site-dio-main
 
-echo ¨==========================="
+echo "==========================="
 echo "Finalizado..."
-echo ¨==========================="
+echo "==========================="
+
+chmod +x setup-servidor-web.sh
