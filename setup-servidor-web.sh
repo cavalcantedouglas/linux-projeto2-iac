@@ -2,8 +2,8 @@
 
 # ATENCAO
 # RODAR ESTE SCRIPT COM PRIVILEGIOS DE ADMINISTRADOR OU ROOT
-if ["$EUID" -ne 0 ]; then
-	echo "Erro: Este script precisa ser executado com privilegios de root. Tente: sudo."
+if [ "$EUID" -ne 0 ]; then
+	echo "Erro: Este script precisa ser executado com privilegios de root. Tente: sudo. $0"
 	exit 1
 fi
 
@@ -14,7 +14,7 @@ echo "Iniciando..."
 echo "==========================="
 
 echo "Atualizando pacotes"
-apt-get update && apt-get upgrade -y
+apt updat
 
 echo "Instalando e configurando servidor web Apache"
 # Instalando Apache
@@ -39,7 +39,6 @@ echo "Limpando arquivos temporarios"
 rm -rf /tmp/main.zip /tmp/linux-site-dio-main
 
 echo "==========================="
-echo "Finalizado..."
+echo "Configuração concluída! Acesse o site em http://$(hostname -I | awk '{print $1}')"
 echo "==========================="
 
-chmod +x setup-servidor-web.sh
