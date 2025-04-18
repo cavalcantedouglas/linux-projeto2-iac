@@ -14,7 +14,7 @@ echo "Iniciando..."
 echo "==========================="
 
 echo "Atualizando pacotes"
-apt updat
+apt update
 
 echo "Instalando e configurando servidor web Apache"
 # Instalando Apache
